@@ -21,7 +21,7 @@ function count() {
             millitime = 61;
             sectime = 61;
             mintime = 61;
-            hourtime --;
+            hourtime--;
             document.getElementById("hour").textContent = hourtime;
         }
         if (hourtime == 0) {
@@ -33,17 +33,17 @@ function count() {
             document.getElementById("day").textContent = daytime;
         }
         millitime--;
-        setTimeout(count,18);
+        setTimeout(count, 18);
     }
 }
 count();
 
-function change(){
-    var status=document.getElementById('stp').textContent;
-    if(status==stop){
-        document.getElementById('stp').textContent="Start";
+function change() {
+    var status = document.getElementById('stp').textContent;
+    if (status == stop) {
+        document.getElementById('stp').textContent = "Start";
     }
-    else{
-        document.getElementById('stp').textContent="Stop";
-    }   
+    else {
+        document.getElementById('stp').textContent = "Stop";
+    }
 }
