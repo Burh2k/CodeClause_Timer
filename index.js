@@ -37,3 +37,13 @@ function count() {
     }
 }
 count();
+
+function change(){
+    var status=document.getElementById('stp').textContent;
+    if(status==stop){
+        document.getElementById('stp').textContent="Start";
+    }
+    else{
+        document.getElementById('stp').textContent="Stop";
+    }   
+}
