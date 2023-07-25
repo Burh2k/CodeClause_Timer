@@ -14,61 +14,52 @@
     </style>
 </head>
 
-<body class="bg-cover bg-center" style="background-image: url(wall.jpg);">
-    <h1 class="mx-52 my-28 mb-20 text-white text-6xl font-extrabold " style="font-family: 'Lilita One', cursive;">
+<body class="bg-cover bg-center bg-no-repeat h-screen" style="background-image: url(wall.jpg);overflow: hidden;">
+    <!-- <h1 class="mx-52 my-20 text-6xl font-extrabold" style="font-family: 'Lilita One', cursive;">
         Digital Timer
-    </h1>
-    <div class="mx-52 py-20  text-5xl bg-green-300 bg-opacity-40 border-black border-2 rounded-2xl shadow-2xl flex justify-evenly"
+    </h1> -->
+    <div class="mt-52 mx-52 py-20 pb-10  text-6xl text-white bg-opacity-40 flex justify-evenly"
         style="font-family: 'Roboto', sans-serif;">
-        <div class="p-20 flex flex-col text-center border border-black rounded-full">
+        <div class="p-16 flex flex-col text-center font-bold">
             <span id="day" class="pb-5">
-                7
             </span>
             <span>
                 DAYS
             </span>
         </div>
-        <div class="p-16 flex flex-col text-center border border-black rounded-full">
+        <div class="p-16 flex flex-col text-center font-bold">
             <span id="hour" class="pb-5">
-                24
             </span>
             <span>
                 HOURS
             </span>
         </div>
-        <div class="p-9 flex flex-col text-center border border-black rounded-full">
+        <div class="p-9 flex flex-col text-center font-bold">
             <span id="min" class="py-6">
-                60
             </span>
             <span>
                 MINUTES
             </span>
         </div>
-        <div class="p-8 flex flex-col text-center border border-black rounded-full">
+        <div class="p-8 flex flex-col text-center font-bold">
             <span id="sec" class="py-6">
-                60
             </span>
             <span>
                 SECONDS
             </span>
 
         </div>
-        <div class="p-9 flex flex-col text-center border border-black rounded-full">
-            <span id="milli" class="py-4">
-                60
-            </span>
-            <span>
-                MILLISEC
-            </span>
-        </div>
     </div>
     <div class="flex justify-center">
         <button onclick="change()" id="stp"
-            class="mt-10 py-2 px-14 text-2xl bg-white font-bold border-4 hover:bg-black hover:text-white hover:border-white duration-300 border-black rounded-full">
+            class="mt-9 mx-10 py-2 px-14 text-2xl bg-white font-bold border-2 hover:bg-black hover:text-white hover:border-white duration-300 border-black rounded-full">
             STOP
         </button>
+        <button onclick="clc()" id="rest"
+            class="mt-9 py-2 px-14 text-2xl bg-white font-bold border-2 hover:bg-black hover:text-white hover:border-white duration-300 border-black rounded-full">
+            RESET
+        </button>
     </div>
-
     <script src="index.js"></script>
 </body>
 
