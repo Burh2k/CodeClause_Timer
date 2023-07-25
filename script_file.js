@@ -65,3 +65,4 @@ function clc() {
         count();
     }
 }
+count();
