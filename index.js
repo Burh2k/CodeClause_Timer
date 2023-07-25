@@ -15,47 +15,53 @@ document.getElementById('min').textContent = mintime;
 document.getElementById('sec').textContent = sectime;
 
 function count() {
-    if (sectime >= 0) {
-        document.getElementById("sec").textContent = sectime;
-        if (sectime == 0) {
-            sectime = 60;
-            mintime--;
-            document.getElementById("min").textContent = mintime;
+    counting = setInterval(function () {
+        if (sectime >= 0) {
+            document.getElementById("sec").textContent = sectime.toString().padStart(2, '0');
+            if (sectime == 0) {
+                sectime = 60;
+                mintime--;
+                document.getElementById("min").textContent = mintime.toString().padStart(2, '0');
+            }
+            if (mintime == 0) {
+                sectime = 60;
+                mintime = 60;
+                hourtime--;
+                document.getElementById("hour").textContent = hourtime.toString().padStart(2, '0');
+            }
+            if (hourtime == 0) {
+                sectime = 60;
+                mintime = 60;
+                hourtime = 24;
+                daytime--;
+                document.getElementById("day").textContent = daytime.toString().padStart(3, '0');
+            }
+            sectime--;
+        } else {
+            clearInterval(counting);
         }
-        if (mintime == 0) {
-            sectime = 60;
-            mintime = 60;
-            hourtime--;
-            document.getElementById("hour").textContent = hourtime;
-        }
-        if (hourtime == 0) {
-            sectime = 60;
-            mintime = 60;
-            hourtime = 24;
-            daytime--;
-            document.getElementById("day").textContent = daytime;
-        }
-        sectime--;
-        counting = setTimeout(count, 1000);
-    }
-    else {
-        clearTimeout(counting);
-    }
-
+    }, 1000)
+    // else {
+    //     clearTimeout(counting);
+    // }
 }
-function change() {
-    if (document.getElementById('stp').textContent === "STOP") {
-        document.getElementById('stp').textContent = "START";
-        clearTimeout(counting);
-    }
-    else {
-        document.getElementById('stp').textContent = "STOP";
-        count();
-    }
+function start() {
+    count();
 }
-function clc(){
+function stop() {
+    clearInterval(counting);
+}
+function clc() {
     document.getElementById("day").textContent = "360";
     document.getElementById("hour").textContent = "24";
     document.getElementById("min").textContent = "60";
     document.getElementById("sec").textContent = "60";
+    // Reset the countdown values to their initial values
+    daytime = 360;
+    hourtime = 24;
+    mintime = 60;
+    sectime = 60;
+    if (!counting) {
+        count();
+    }
 }

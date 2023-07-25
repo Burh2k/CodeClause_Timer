@@ -15,9 +15,6 @@
 </head>
 
 <body class="bg-cover bg-center bg-no-repeat h-screen" style="background-image: url(wall.jpg);overflow: hidden;">
-    <!-- <h1 class="mx-52 my-20 text-6xl font-extrabold" style="font-family: 'Lilita One', cursive;">
-        Digital Timer
-    </h1> -->
     <div class="mt-52 mx-52 py-20 pb-10  text-6xl text-white bg-opacity-40 flex justify-evenly"
         style="font-family: 'Roboto', sans-serif;">
         <div class="p-16 flex flex-col text-center font-bold">
@@ -51,7 +48,11 @@
         </div>
     </div>
     <div class="flex justify-center">
-        <button onclick="change()" id="stp"
+        <button onclick="start()" id="stp"
+            class="mt-9 py-2 px-14 text-2xl bg-white font-bold border-2 hover:bg-black hover:text-white hover:border-white duration-300 border-black rounded-full">
+            START
+        </button>
+        <button onclick="stop()" id="stp"
             class="mt-9 mx-10 py-2 px-14 text-2xl bg-white font-bold border-2 hover:bg-black hover:text-white hover:border-white duration-300 border-black rounded-full">
             STOP
         </button>
